@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('permisos_roles', function (Blueprint $table) {
            $table-> unsignedBigInteger('permisos_id');
            $table->foreign('permisos_id', 'fk_permisorol_permiso')->references('id')->on('permisos')->onDelete('cascade')->onUpdate('restrict');
-           $table-> unsignedBigInteger('roles');
+           $table-> unsignedBigInteger('roles_id');
            $table->foreign('roles_id', 'fk_permisorol_rol')->references('id')->on('roles')->onDelete('cascade')->onUpdate('restrict');
         });
     }
